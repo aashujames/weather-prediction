@@ -1,0 +1,14 @@
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 27px 24px;
+    gap: 1px;
+
+    width: 430px;
+    height: 54px;
+
+    background: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+}
