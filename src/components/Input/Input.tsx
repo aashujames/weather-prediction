@@ -1,4 +1,5 @@
 import React, { ForwardRefRenderFunction, InputHTMLAttributes } from "react";
+import "./input.css";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     name?: string;
