@@ -1,16 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
-import Input from "./components/Input/Input";
-import Button from "./components/Button/Button";
+import Signup from "./pages/Signup/Signup";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const api_url = "https://hiring-test.a2dweb.com/api-docs/#/";
 
+    // Defining async function
+    async function getapi(url: any) {
+        // Storing response
+        const response = await fetch(url);
+
+        // Storing data in form of JSON
+        var data = await response.json();
+        console.log(data);
+    }
+    // Calling that async function
+    getapi(api_url);
     return (
         <div className="App">
-            <Input />
-            <Button>Signup</Button>
+            <Signup />
         </div>
     );
 }

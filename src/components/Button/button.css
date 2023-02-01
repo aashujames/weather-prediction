@@ -1,0 +1,25 @@
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 42px;
+    gap: 6px;
+    width: 430px;
+    height: 54px;
+
+    background: #d9d9d9;
+    border-radius: 15px;
+    order: 1;
+    align-self: stretch;
+}
+
+.children {
+    width: 55px;
+    height: 19px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    order: 0;
+}
