@@ -26,7 +26,13 @@ const Signup = () => {
                             </div>
                             <Button>Signup</Button>
                         </div>
-                        <div></div>
+                        <div className="terms-container">
+                            <p className="terms-para">
+                                By registering you agree to the Forecasting.
+                                <span>Terms of Use</span> and{" "}
+                                <span>Privacy Policy</span>
+                            </p>
+                        </div>
                     </div>
                     <div className="bottom-section">
                         Already have an Account ? Login
