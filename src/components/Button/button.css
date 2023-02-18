@@ -21,3 +21,14 @@
     color: #ffffff;
     order: 0;
 }
+
+@media screen and (max-width: 450px) {
+    .btn {
+        padding: 10px 0;
+        width: 100%;
+    }
+    .children {
+        width: 20%;
+        font-size: 16px;
+    }
+}

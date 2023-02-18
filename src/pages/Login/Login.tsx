@@ -5,7 +5,7 @@ import "./login.css";
 
 const Login = () => {
     return (
-        <AuthCard textFooter="Don't have an account? Signup">
+        <AuthCard textFooter="Don't have an account? " link="Signup">
             {" "}
             <div className="top-form">
                 <div className="form-inside">
