@@ -3,7 +3,6 @@ import "./signup.css";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import AuthCard from "../../components/AuthCard/AuthCard";
-import InputSelect from "../../components/InputSelect/InputSelect";
 
 const Signup = () => {
     return (
