@@ -18,7 +18,7 @@ const Login = () => {
                     me
                 </div>
 
-                <Button>Login</Button>
+                <Button className="login-btn">Login</Button>
             </div>
         </AuthCard>
     );

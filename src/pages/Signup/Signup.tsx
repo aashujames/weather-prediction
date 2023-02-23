@@ -1,45 +1,37 @@
 import React from "react";
 import "./signup.css";
-import Logo from "../../assets/SQ WH bg 1.png";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import AuthCard from "../../components/AuthCard/AuthCard";
 
 const Signup = () => {
     return (
-        <div>
-            <div className="main-card">
-                <div className="card">
-                    <div className="upper-section">
-                        <div className="logo">
-                            <img src={Logo} className="img-logo" />
-                            <div className="heading">Forecasting</div>
-                        </div>
-                        <p className="para-header">
-                            Enter your email address and password
-                        </p>
-                        <div className="top-form">
-                            <div className="form-inside">
-                                <Input placeholder="Full Name" />
-                                <Input placeholder="Phone Number" />
-                                <Input type="email" placeholder="Email" />
-                                <Input type="password" placeholder="Password" />
-                            </div>
-                            <Button>Signup</Button>
-                        </div>
-                        <div className="terms-container">
-                            <p className="terms-para">
-                                By registering you agree to the Forecasting.
-                                <span>Terms of Use</span> and{" "}
-                                <span>Privacy Policy</span>
-                            </p>
-                        </div>
+        <AuthCard textFooter="Already have an Account ? " link="Login">
+            <div className="top-form">
+                <div className="form-inside">
+                    <Input type="text" placeholder="Full Name" />
+                    <Input type="number" placeholder="Phone Number" />
+                    <div className="select-container">
+                        <select className="select">
+                            <option defaultValue="Country">Country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="Japan">Japan</option>
+                        </select>
                     </div>
-                    <div className="bottom-section">
-                        Already have an Account ? Login
-                    </div>
+                    <Input type="email" placeholder="Email" />
+                    <Input type="password" placeholder="Password" />
                 </div>
+
+                <Button className="signup-btn">Signup</Button>
             </div>
-        </div>
+            <div className="terms-section">
+                <p className="terms-para">
+                    By registering you agree to the Forecasting. Terms of Use
+                    and Privacy Policy
+                </p>
+            </div>
+        </AuthCard>
     );
 };
 
