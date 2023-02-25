@@ -12,6 +12,7 @@
 @media screen and (max-width: 450px) {
     .top-form {
         align-items: flex-start;
+        height: 40%;
     }
 }
 .form-inside {
