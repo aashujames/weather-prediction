@@ -12,6 +12,7 @@
 @media screen and (max-width: 450px) {
     .top-form {
         align-items: flex-start;
+        height: 65%;
     }
 }
 
@@ -53,6 +54,12 @@
     background: #d9d9d9;
     border-radius: 15px;
     order: 1;
+}
+
+@media screen and (max-width: 450px) {
+    .signup-btn {
+        padding: 6px 0;
+    }
 }
 
 .terms-section {
