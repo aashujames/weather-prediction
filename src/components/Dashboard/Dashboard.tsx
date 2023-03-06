@@ -42,13 +42,17 @@ const Dashboard = () => {
                     </div>
                     <div className="tside-second-section">
                         <div className="hmain">Main</div>
-                        <button className="btn-dash">
-                            <img src={dashboard} />
-                            Dashboard
+                        <button className="btn-choice">
+                            <div className="btn-choice-container">
+                                <img src={dashboard} />
+                                <div>Dashboard</div>
+                            </div>
                         </button>
-                        <button className="btn-report">
-                            <img src={report} />
-                            Forecast report
+                        <button className="btn-choice">
+                            <div className="btn-choice-container2">
+                                <img src={report} />
+                                <div>Forecast report</div>
+                            </div>
                         </button>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 .main-container {
     background: linear-gradient(192.05deg, #47bfdf 0%, #4a91ff 100%);
+    box-sizing: border-box;
     width: 100dvw;
     height: 100dvh;
     position: absolute;
@@ -119,6 +120,30 @@
 .tside-second-section {
     display: grid;
     grid-template-rows: 0.5fr 1fr 1fr;
+}
+
+.hmain {
+    align-self: center;
+}
+
+.btn-choice {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-choice-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.btn-choice-container2 {
+    display: flex;
+    width: 62%;
+    justify-content: space-around;
 }
 
 .bottom-sidebar {
