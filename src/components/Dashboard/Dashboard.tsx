@@ -4,10 +4,14 @@ import rightIcon from "../../assets/Turnoff.png";
 import locationPin from "../../assets/locationpin.png";
 import sidebarImage from "../../assets/sidebarimage.png";
 import logo from "../../assets/SQ WH bg 1.png";
-import dashboard from "../../assets/dashboard.png";
+import current from "../../assets/current.png";
 import report from "../../assets/reportdocs.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+    const [cityName, setCityName] = useState("");
+
     return (
         <div className="main-container">
             <div className="main-nav">
@@ -18,15 +22,16 @@ const Dashboard = () => {
                     <div className="right-section">
                         <img src={locationPin} />
                         <div className="select-container">
-                            <select>
+                            <form>
                                 <input
-                                    type="search"
-                                    placeholder="Search..."
-                                    required
+                                    type="text"
+                                    value={cityName}
+                                    onChange={(e) =>
+                                        setCityName(e.target.value)
+                                    }
+                                    placeholder="City name"
                                 />
-                                <option defaultValue="">Varanasi</option>
-                                <option value="New delhi">New delhi</option>
-                            </select>
+                            </form>
                         </div>
                     </div>
                     <div className="righticon-section">
@@ -42,18 +47,22 @@ const Dashboard = () => {
                     </div>
                     <div className="tside-second-section">
                         <div className="hmain">Main</div>
-                        <button className="btn-choice">
-                            <div className="btn-choice-container">
-                                <img src={dashboard} />
-                                <div>Dashboard</div>
-                            </div>
-                        </button>
-                        <button className="btn-choice">
-                            <div className="btn-choice-container2">
-                                <img src={report} />
-                                <div>Forecast report</div>
-                            </div>
-                        </button>
+                        <Link to="/current-weather">
+                            <button className="btn-choice">
+                                <div className="btn-choice-container">
+                                    <img src={current} />
+                                    <div>Current Weather</div>
+                                </div>
+                            </button>
+                        </Link>
+                        <Link to="/forecast-report">
+                            <button className="btn-choice">
+                                <div className="btn-choice-container2">
+                                    <img src={report} />
+                                    <div>Forecast report</div>
+                                </div>
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="bottom-sidebar">
