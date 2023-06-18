@@ -1,0 +1,73 @@
+.main-sidebar {
+    box-sizing: border-box;
+    position: absolute;
+    width: 18%;
+    height: 100%;
+    top: 0px;
+    background: var(--background);
+    box-shadow: inset 0px -0.5px 0px #e9ebf0;
+    display: grid;
+    grid-template-rows: 30% 37%;
+    align-content: space-between;
+    padding: 30px 0px;
+}
+
+.top-sidebar {
+    display: grid;
+    grid-template-rows: 40% 60%;
+}
+
+.tside-logo-section {
+    display: grid;
+    grid-template-columns: 125px 118px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 42%;
+}
+
+.fore-head {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.tside-second-section {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr;
+}
+
+.hmain {
+    align-self: center;
+}
+
+.btn-choice {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-choice-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.btn-choice-container2 {
+    display: flex;
+    width: 62%;
+    justify-content: space-around;
+}
+
+.bottom-sidebar {
+    display: grid;
+    width: 100%;
+    height: 90%;
+}
+
+.sidebar-image {
+    width: 100%;
+}

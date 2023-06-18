@@ -1,0 +1,19 @@
+.main-container {
+    background: linear-gradient(192.05deg, #47bfdf 0%, #4a91ff 100%);
+    box-sizing: border-box;
+    width: 100dvw;
+    height: 100dvh;
+    position: relative;
+    top: 0;
+    left: 0;
+    --background: #ffffff;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #4a91ff;
+    width: 200px;
+    height: 200px;
+}
