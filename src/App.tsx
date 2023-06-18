@@ -1,6 +1,5 @@
 import "./App.css";
 import Dashboard from "./components/Dashboard/Dashboard";
-import CurrentWeather from "./pages/CurrentWeather/CurrentWeather";
 import ForecastReport from "./pages/ForecastReport/ForecastReport";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
@@ -11,9 +10,12 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/current-weather" element={<CurrentWeather />} />
-                <Route path="/forecast-report" element={<ForecastReport />} />
+                <Route path="/" element={<Dashboard />}>
+                    <Route
+                        path="forecast-report"
+                        element={<ForecastReport />}
+                    />
+                </Route>
             </Routes>
         </BrowserRouter>
     );
