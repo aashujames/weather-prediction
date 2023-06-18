@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import leftIcon from "../../assets/navleft.png";
 import rightIcon from "../../assets/Turnoff.png";
 import locationPin from "../../assets/locationpin.png";
 import "./navbar.css";
+import { WeatherContext } from "../../context";
 
 const Navbar = () => {
-    const [cityName, setCityName] = useState("");
+    const { cityName, setCityName } = useContext(WeatherContext);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

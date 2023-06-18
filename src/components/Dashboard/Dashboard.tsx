@@ -1,5 +1,4 @@
 import "./dashboard.css";
-import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -12,9 +11,6 @@ const Dashboard: React.FC<DashboardProps> = () => {
         <div className="main-container">
             <Navbar />
             <Sidebar />
-            <div className="center">
-                <Outlet />S
-            </div>
         </div>
     );
 };

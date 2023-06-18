@@ -1,15 +1,15 @@
 import React from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
 
-const ForecastReport = () => {
+const Home = () => {
     return (
         <div>
             <Dashboard />
             <div className="center">
-                <div>forecast here</div>
+                <div>data here</div>
             </div>
         </div>
     );
 };
 
-export default ForecastReport;
+export default Home;
