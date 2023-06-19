@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Dashboard from "../../components/Dashboard/Dashboard";
+import { WeatherContext } from "../../context";
 
 const ForecastReport = () => {
+    const { setSwitchPage } = useContext(WeatherContext);
+
+    useEffect(() => {
+        setSwitchPage("F");
+    }, []);
+
     return (
         <div>
             <Dashboard />
