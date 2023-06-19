@@ -17,10 +17,12 @@ const Sidebar = () => {
                 <div className="tside-second-section">
                     <div className="hmain">Main</div>
                     <button className="btn-choice">
-                        <div className="btn-choice-container">
-                            <img src={current} />
-                            <div>Dashboard</div>
-                        </div>
+                        <Link to="/">
+                            <div className="btn-choice-container">
+                                <img src={current} />
+                                <div>Dashboard</div>
+                            </div>
+                        </Link>
                     </button>
                     <button className="btn-choice">
                         <Link to="/forecast-report">
@@ -35,7 +37,6 @@ const Sidebar = () => {
             <div className="bottom-sidebar">
                 <img className="sidebar-image" src={sidebarImage} />
             </div>
-            N
         </div>
     );
 };

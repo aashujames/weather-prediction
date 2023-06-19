@@ -1,23 +1,22 @@
 import "./App.css";
-import Dashboard from "./components/Dashboard/Dashboard";
+import WeatherProvider from "./context";
 import ForecastReport from "./pages/ForecastReport/ForecastReport";
-import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup/Signup";
-import SignupCreated from "./pages/SignupCreated/SignupCreated";
+import Home from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Dashboard />}>
+        <WeatherProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route
                         path="forecast-report"
                         element={<ForecastReport />}
                     />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+                </Routes>
+            </BrowserRouter>
+        </WeatherProvider>
     );
 }
 

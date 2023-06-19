@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import leftIcon from "../../assets/navleft.png";
 import rightIcon from "../../assets/Turnoff.png";
 import locationPin from "../../assets/locationpin.png";
 import "./navbar.css";
+import { WeatherContext } from "../../context";
 
 const Navbar = () => {
-    const [cityName, setCityName] = useState("");
+    const {
+        cityName,
+        setCityName,
+        fetchingCurrentData,
+        switchPage,
+        fetchingForecastic
+    } = useContext(WeatherContext);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        const city_name = { cityName };
-        console.log(city_name);
+        if (switchPage === "H") {
+            fetchingCurrentData();
+        } else if (switchPage === "F") {
+            fetchingForecastic();
+        }
+        setCityName("");
     };
 
     return (
