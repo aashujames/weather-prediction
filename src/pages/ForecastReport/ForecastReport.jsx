@@ -3,10 +3,11 @@ import Dashboard from "../../components/Dashboard/Dashboard";
 import { WeatherContext } from "../../context";
 
 const ForecastReport = () => {
-    const { setSwitchPage } = useContext(WeatherContext);
+    const { setSwitchPage, setCityData } = useContext(WeatherContext);
 
     useEffect(() => {
         setSwitchPage("F");
+        setCityData({});
     }, []);
 
     return (

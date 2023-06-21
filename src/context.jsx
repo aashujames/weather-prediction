@@ -1,28 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 
-export const WeatherContext = React.createContext<{
-    cityName: string;
-    setCityName: React.Dispatch<React.SetStateAction<string>>;
-    switchPage: string;
-    setSwitchPage: React.Dispatch<React.SetStateAction<string>>;
-    fetchingCurrentData: () => Promise<void>;
-    fetchingForecastic: () => Promise<void>;
-}>({
-    cityName: "",
-    setCityName: () => {},
-    switchPage: "",
-    setSwitchPage: () => {},
-    fetchingCurrentData: async () => {},
-    fetchingForecastic: async () => {}
-});
+export const WeatherContext = React.createContext();
 
-type ContextProp = {
-    children?: React.ReactNode;
-};
-
-const WeatherProvider: React.FC<ContextProp> = ({ children }) => {
+const WeatherProvider = ({ children }) => {
     const [cityName, setCityName] = useState("");
     const [switchPage, setSwitchPage] = useState("H");
+    const [cityData, setCityData] = useState({ main: {}, sys: {} });
 
     const fetchingCurrentData = async () => {
         try {
@@ -33,6 +16,7 @@ const WeatherProvider: React.FC<ContextProp> = ({ children }) => {
             );
             const data = await res.json();
             console.log(data);
+            setCityData(data);
         } catch (error) {
             console.log(error);
         }
@@ -47,6 +31,7 @@ const WeatherProvider: React.FC<ContextProp> = ({ children }) => {
             );
             const data = await res.json();
             console.log(data);
+            setCityData(data);
         } catch (error) {
             console.log(error);
         }
@@ -60,7 +45,9 @@ const WeatherProvider: React.FC<ContextProp> = ({ children }) => {
                 fetchingCurrentData,
                 switchPage,
                 setSwitchPage,
-                fetchingForecastic
+                fetchingForecastic,
+                cityData,
+                setCityData
             }}
         >
             {children}
