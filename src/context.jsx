@@ -5,9 +5,28 @@ export const WeatherContext = React.createContext();
 const WeatherProvider = ({ children }) => {
     const [cityName, setCityName] = useState("");
     const [switchPage, setSwitchPage] = useState("H");
-    const [cityData, setCityData] = useState({ main: {}, sys: {} });
+    const [currentCityData, setCurrentCityData] = useState({
+        temp: 0,
+        country: "",
+        currentIcon: "",
+        weatherType: "",
+        feelsLike: "",
+        maxTemp: 0,
+        humidity: 0,
+        windSpeed: 0
+    });
+    const [show, setShow] = useState(false);
 
     const fetchingCurrentData = async () => {
+        setCurrentCityData({
+            temp: 0,
+            currentIcon: "",
+            weatherType: "",
+            feelsLike: "",
+            maxTemp: 0,
+            humidity: 0,
+            windSpeed: 0
+        });
         try {
             const res = await fetch(
                 "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -16,9 +35,19 @@ const WeatherProvider = ({ children }) => {
             );
             const data = await res.json();
             console.log(data);
-            setCityData(data);
+            const info = [data.main, data.sys, data.weather, data.wind];
+            setCurrentCityData({
+                temp: info[0].temp - 273.15,
+                currentIcon: info[2][0].icon,
+                weatherType: info[2][0].main,
+                feelsLike: info[0].feels_like - 273.15,
+                maxTemp: info[0].temp_max - 273.15,
+                humidity: info[0].humidity,
+                windSpeed: info[3].speed
+            });
+            setShow(true);
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
         }
     };
 
@@ -31,7 +60,7 @@ const WeatherProvider = ({ children }) => {
             );
             const data = await res.json();
             console.log(data);
-            setCityData(data);
+            setCurrentCityData(data);
         } catch (error) {
             console.log(error);
         }
@@ -46,8 +75,10 @@ const WeatherProvider = ({ children }) => {
                 switchPage,
                 setSwitchPage,
                 fetchingForecastic,
-                cityData,
-                setCityData
+                currentCityData,
+                setCurrentCityData,
+                show,
+                setShow
             }}
         >
             {children}
