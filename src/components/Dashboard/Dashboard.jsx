@@ -2,11 +2,7 @@ import "./dashboard.css";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 
-interface DashboardProps {
-    children?: React.ReactNode;
-}
-
-const Dashboard: React.FC<DashboardProps> = () => {
+const Dashboard = () => {
     return (
         <div className="main-container">
             <Navbar />

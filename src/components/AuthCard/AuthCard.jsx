@@ -4,13 +4,7 @@ import "./authcard.css";
 import leftCross from "../../assets/leftcross.png";
 import rightCross from "../../assets/rightcross.png";
 
-interface AuthProps {
-    children?: React.ReactNode;
-    textFooter: string;
-    link: string;
-}
-
-const AuthCard: React.FC<AuthProps> = ({ children, textFooter, link }) => {
+const AuthCard = ({ children, textFooter, link }) => {
     return (
         <div className="main-container">
             <div className="main-card">

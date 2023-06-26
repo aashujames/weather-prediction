@@ -14,7 +14,7 @@ const Navbar = () => {
         fetchingForecastic
     } = useContext(WeatherContext);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (switchPage === "H") {
             fetchingCurrentData();
