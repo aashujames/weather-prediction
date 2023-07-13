@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useContext, useEffect, useState } from "react";
 
 export const WeatherContext = React.createContext();
@@ -16,7 +17,9 @@ const WeatherProvider = ({ children }) => {
         windSpeed: 0
     });
     const [show, setShow] = useState(false);
+    const [forecastData, setForecastData] = useState([]);
 
+    //Get the current weather data of a city
     const fetchingCurrentData = async () => {
         setCurrentCityData({
             temp: 0,
@@ -34,7 +37,6 @@ const WeatherProvider = ({ children }) => {
                     "&appid=422d9b549f260cc325650e2f823633fc"
             );
             const data = await res.json();
-            console.log(data);
             const info = [data.main, data.sys, data.weather, data.wind];
             setCurrentCityData({
                 temp: info[0].temp - 273.15,
@@ -51,7 +53,9 @@ const WeatherProvider = ({ children }) => {
         }
     };
 
+    //Get the forecast weather data of a city
     const fetchingForecastic = async () => {
+        setForecastData([]);
         try {
             const res = await fetch(
                 "https://api.openweathermap.org/data/2.5/forecast?q=" +
@@ -59,8 +63,28 @@ const WeatherProvider = ({ children }) => {
                     "&appid=ac1d7bb080fbf54a4073009d37a37ec8"
             );
             const data = await res.json();
-            console.log(data);
-            setCurrentCityData(data);
+            const originalArray = data.list; // Assuming the list is stored in 'data.list'
+            setForecastData(
+                originalArray
+                    .slice(6, 29)
+                    .filter((_, index) => index % 2 === 0) // Skip every next item
+                    .map((item) => {
+                        const [date, time] = item.dt_txt.split(" "); // Split dt_txt into date and time
+                        const formattedDate = moment(date).format("DD-MM");
+
+                        const formattedTime = moment(time, "HH:mm:ss").format(
+                            "hh:mm A"
+                        );
+
+                        return {
+                            date: formattedDate,
+                            time: formattedTime,
+                            temp: item.main.temp - 273.15,
+                            icon: item.weather[0].icon
+                        };
+                    })
+            );
+            setShow(true);
         } catch (error) {
             console.log(error);
         }
@@ -78,7 +102,9 @@ const WeatherProvider = ({ children }) => {
                 currentCityData,
                 setCurrentCityData,
                 show,
-                setShow
+                setShow,
+                forecastData,
+                setForecastData
             }}
         >
             {children}
