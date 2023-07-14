@@ -35,7 +35,7 @@ const Home = () => {
         minutes = minutes.toString().padStart(2, "0");
         var currentTime = hours + ":" + minutes + " " + ampm;
 
-        // var currentTemp = parseInt(currentCityData.temp - 273.15);
+        var speed = (currentCityData.windSpeed * 3.6).toFixed(1);
     }
 
     return (
@@ -53,7 +53,7 @@ const Home = () => {
                         <div>{parseInt(currentCityData.feelsLike)}&#8451;</div>
                         <div>{parseInt(currentCityData.maxTemp)}&#8451;</div>
                         <div>{currentCityData.humidity}%</div>
-                        <div>{currentCityData.windSpeed}</div>
+                        <div>{speed} km/h</div>
                     </div>
                 )}
             </div>

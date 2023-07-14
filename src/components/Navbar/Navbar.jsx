@@ -21,7 +21,7 @@ const Navbar = () => {
         } else if (switchPage === "F") {
             fetchingForecastic();
         }
-        setCityName("");
+        // setCityName("");
     };
 
     return (
