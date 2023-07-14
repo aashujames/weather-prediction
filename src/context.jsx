@@ -63,7 +63,7 @@ const WeatherProvider = ({ children }) => {
                     "&appid=ac1d7bb080fbf54a4073009d37a37ec8"
             );
             const data = await res.json();
-            const originalArray = data.list; // Assuming the list is stored in 'data.list'
+            const originalArray = data.list;
             setForecastData(
                 originalArray
                     .slice(6, 29)
