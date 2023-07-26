@@ -5,16 +5,16 @@ import report from "../../assets/reportdocs.png";
 import sidebarImage from "../../assets/sidebarimage.png";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
+import CloseIcon from "@mui/icons-material/Close";
 
-const Sidebar = () => {
+const Sidebar = ({ showSidebar, ToggleSidebar }) => {
     return (
-        <div className="main-sidebar">
+        <div className={showSidebar ? "main-sidebar active" : "main-sidebar"}>
             <div className="top-sidebar">
-                <div className="tside-logo-section">
-                    <img src={logo} className="logo" />
-                    <div className="fore-head">Forecasting</div>
+                <div className="t-icon" onClick={ToggleSidebar}>
+                    <CloseIcon />
                 </div>
-                <div className="tside-second-section">
+                <div className="tside-section">
                     <div className="hmain">Main</div>
                     <button className="btn-choice">
                         <Link to="/">
@@ -24,6 +24,7 @@ const Sidebar = () => {
                             </div>
                         </Link>
                     </button>
+
                     <button className="btn-choice">
                         <Link to="/forecast-report">
                             <div className="btn-choice-container2">
