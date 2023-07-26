@@ -5,7 +5,7 @@ import locationPin from "../../assets/locationpin.png";
 import "./navbar.css";
 import { WeatherContext } from "../../context";
 
-const Navbar = () => {
+const Navbar = ({ ToggleSidebar }) => {
     const {
         cityName,
         setCityName,
@@ -21,14 +21,13 @@ const Navbar = () => {
         } else if (switchPage === "F") {
             fetchingForecastic();
         }
-        // setCityName("");
     };
 
     return (
         <div className="main-nav">
-            <div className="lefticon-section">
+            <button className="left-button" onClick={ToggleSidebar}>
                 <img src={leftIcon} className="left-icon" />
-            </div>
+            </button>
             <div className="right-container">
                 <div className="right-section">
                     <img src={locationPin} />
