@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/SQ WH bg 1.png";
 import current from "../../assets/current.png";
 import report from "../../assets/reportdocs.png";
-import sidebarImage from "../../assets/sidebarimage.png";
+import sidebarImage from "../../assets/sidebar_img.avif";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 import CloseIcon from "@mui/icons-material/Close";
