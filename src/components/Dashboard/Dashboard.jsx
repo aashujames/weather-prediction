@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { useState } from "react";
 
 const Dashboard = () => {
-    const [showSidebar, setShowSidebar] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(true);
 
     const ToggleSidebar = () => setShowSidebar(!showSidebar);
 

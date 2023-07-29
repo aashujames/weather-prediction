@@ -25,10 +25,15 @@ const Navbar = ({ ToggleSidebar }) => {
 
     return (
         <div className="main-nav">
-            <button className="left-button" onClick={ToggleSidebar}>
-                <img src={leftIcon} className="left-icon" />
-            </button>
-            <div className="right-container">
+            <div className="nav-left-container">
+                <button className="left-button" onClick={ToggleSidebar}>
+                    <img src={leftIcon} className="left-icon" />
+                </button>
+            </div>
+            <div className="nav-center">
+                <h3>Weather Forecast</h3>
+            </div>
+            <div className="nav-right-container">
                 <div className="right-section">
                     <img src={locationPin} />
                     <div className="select-container">

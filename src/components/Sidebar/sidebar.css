@@ -27,6 +27,8 @@
 .t-icon {
     width: 22px;
     height: 24px;
+    cursor: pointer;
+    margin-left: 1.2rem;
 }
 
 .tside-section {
@@ -64,5 +66,5 @@
 }
 
 .sidebar-image {
-    width: 100%;
+    width: 85%;
 }

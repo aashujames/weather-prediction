@@ -8,12 +8,3 @@
     left: 0;
     --background: #ffffff;
 }
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: #4a91ff;
-    width: 200px;
-    height: 350px;
-}
