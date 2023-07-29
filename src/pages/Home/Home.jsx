@@ -42,6 +42,7 @@ const Home = () => {
     return (
         <div>
             <Dashboard />
+            <h3 className="home-heading">Current Weather</h3>
             <div className="h-main">
                 {show && (
                     <div className="h-wrap">

@@ -1,19 +1,30 @@
-.main {
-    background-color: blueviolet;
-    top: 130px;
-    left: 400px;
+.forecast-heading {
     position: absolute;
-    width: 800px;
-    height: 700px;
+    top: 10%;
+    left: 25%;
+    color: white;
+}
+
+.main {
+    top: 18%;
+    left: 25%;
+    position: absolute;
+    width: 75%;
+    height: 70%;
 }
 
 .main-inside {
     display: grid;
     grid-template-columns: repeat(2, 40%);
-    column-gap: 80px;
+    gap: 13px 80px;
 }
 
 .container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    background: var(--bg-color-dashboard);
+    border-radius: 1rem;
+    color: white;
+    font-weight: 300;
 }
