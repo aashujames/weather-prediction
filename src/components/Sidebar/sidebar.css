@@ -35,6 +35,7 @@
     height: 45%;
     display: grid;
     grid-template-rows: 0.5fr 1fr 1fr;
+    row-gap: 6px;
 }
 
 .hmain {
@@ -47,11 +48,24 @@
     align-items: center;
     border: none;
     cursor: pointer;
+    /* border: 1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn-choice:active {
+    transition: 700ms;
+    transform: scale(0.9);
 }
 
 .btn-choice-container {
     display: grid;
     grid-template-columns: 12% 50%;
+}
+
+.txt-link {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .btn-choice-container2 {

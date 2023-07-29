@@ -17,19 +17,22 @@ const Sidebar = ({ showSidebar, ToggleSidebar }) => {
                 <div className="tside-section">
                     <div className="hmain">Main</div>
                     <button className="btn-choice">
-                        <Link to="/">
+                        <Link to="/" style={{ textDecoration: "none" }}>
                             <div className="btn-choice-container">
                                 <img src={current} />
-                                <div>Dashboard</div>
+                                <div className="txt-link">Dashboard</div>
                             </div>
                         </Link>
                     </button>
 
                     <button className="btn-choice">
-                        <Link to="/forecast-report">
+                        <Link
+                            to="/forecast-report"
+                            style={{ textDecoration: "none" }}
+                        >
                             <div className="btn-choice-container2">
                                 <img src={report} />
-                                <div>Forecast report</div>
+                                <div className="txt-link">Forecast report</div>
                             </div>
                         </Link>
                     </button>

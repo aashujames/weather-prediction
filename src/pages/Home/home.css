@@ -1,3 +1,10 @@
+.home-heading {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    color: white;
+}
+
 .h-main {
     position: absolute;
     top: 20%;
@@ -23,7 +30,7 @@
 }
 
 .h-bottom-container {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--bg-color-dashboard);
     border-radius: 6%;
     width: 80%;
     height: 65%;
