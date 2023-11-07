@@ -34,7 +34,7 @@ const WeatherProvider = ({ children }) => {
             const res = await fetch(
                 "https://api.openweathermap.org/data/2.5/weather?q=" +
                     cityName +
-                    "&appid=422d9b549f260cc325650e2f823633fc"
+                    `&appid=${import.meta.env.VITE_REACT_APP_CURRENT_API_KEY}`
             );
             const data = await res.json();
             const info = [data.main, data.sys, data.weather, data.wind];
@@ -60,7 +60,7 @@ const WeatherProvider = ({ children }) => {
             const res = await fetch(
                 "https://api.openweathermap.org/data/2.5/forecast?q=" +
                     cityName +
-                    "&appid=ac1d7bb080fbf54a4073009d37a37ec8"
+                    `&appid=${import.meta.env.VITE_REACT_APP_FORECAST_API_KEY}`
             );
             const data = await res.json();
             const originalArray = data.list;
